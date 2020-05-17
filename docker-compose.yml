@@ -1,0 +1,23 @@
+version: '3'
+services: 
+  start:
+    build: .
+    working_dir: /usr/src
+    volumes: 
+      - $PWD/:/usr/src/
+    command: npx webpack-dev-server --host 0.0.0.0
+    ports: 
+      - 8080:8080
+  build_web:
+    build: .
+    working_dir: /usr/src
+    volumes: 
+      - $PWD/:/usr/src/
+    command: npx webpack
+  build_wasm:
+    build: .
+    working_dir: /usr/src
+    volumes: 
+      - $PWD/:/usr/src/
+    command: wasm-pack build
+    
