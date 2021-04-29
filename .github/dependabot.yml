@@ -1,0 +1,22 @@
+version: 2
+updates:
+- package-ecosystem: cargo
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "03:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: wasm-bindgen-test
+    versions:
+    - 0.3.20
+    - 0.3.21
+    - 0.3.22
+  - dependency-name: wasm-bindgen
+    versions:
+    - 0.2.70
+    - 0.2.71
+    - 0.2.72
+  - dependency-name: fixedbitset
+    versions:
+    - 0.3.2
